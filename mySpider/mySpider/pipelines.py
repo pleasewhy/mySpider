@@ -12,6 +12,7 @@ class MyspiderPipeline(object):
         if not session.query(Singer).filter_by(singer_id=item["singer_id"]).first():
             try:
                 session.add(Singer(singer_id=item['singer_id'], name=item['singer_name']))
+                session.commit()
             except:
                 session.rollback()
 
@@ -27,6 +28,7 @@ class MyspiderPipeline(object):
                             crawl_time=item['crawl_time'],
                             time_modified=item['crawl_time'])
                         )
+                session.commit()
             except:
                 session.rollback()
 
@@ -42,11 +44,8 @@ class MyspiderPipeline(object):
                                     time_modified = item['crawl_time']
                                     )
                             )
+                session.commit()
         except:
             session.rollback()
 
-        try:
-            session.commit()
-        except:
-            session.rollback()
         return item

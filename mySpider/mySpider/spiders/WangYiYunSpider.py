@@ -8,7 +8,9 @@ import random
 class WangYiYunSpider(scrapy.Spider):
     name = "wangyiyun"
     base_url = "https://music.163.com"
-    start_urls = ["https://music.163.com/discover/artist/cat?id=1001"]
+    # 1001 男歌手前100
+    # 1002 女歌手前100
+    start_urls = ["https://music.163.com/discover/artist/cat?id=1002"]
     now_id = None # 用于爬取
     comment_key = ['likedCount','content','user','time']  # nickname是包含在user中
 
