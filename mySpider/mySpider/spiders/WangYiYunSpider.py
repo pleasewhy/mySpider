@@ -10,7 +10,9 @@ class WangYiYunSpider(scrapy.Spider):
     base_url = "https://music.163.com"
     # 1001 男歌手前100
     # 1002 女歌手前100
-    start_urls = ["https://music.163.com/discover/artist/cat?id=1002"]
+    # 1003 华语乐队前100
+    some_id = [2001,2002,2003,6001,6002,6003,7001,7002,7003]
+    start_urls = ["https://music.163.com/discover/artist/cat?id={}".format(i) for i in some_id]
     now_id = None # 用于爬取
     comment_key = ['likedCount','content','user','time']  # nickname是包含在user中
 

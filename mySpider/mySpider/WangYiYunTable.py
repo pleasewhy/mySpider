@@ -50,7 +50,7 @@ class Singer(Base):
     __tablename__ = 'singer'
 
     singer_id = Column(Integer, primary_key=True)
-    name = Column(String(32))
+    name = Column(String(128))
 
 
     def __repr__(self):
