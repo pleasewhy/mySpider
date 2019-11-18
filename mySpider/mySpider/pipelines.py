@@ -4,7 +4,7 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-from mySpider.WangYiYunTable import *
+from tables.WangYiYunTable import *
 # 将爬取到的数据存储到数据库
 # 注意：添加失败需要回滚不然会一直添加该错误信息
 class MyspiderPipeline(object):
