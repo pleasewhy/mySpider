@@ -3,7 +3,6 @@ from mySpider.items import WangYiYunItem
 import time
 from datetime import datetime
 import json
-import random
 
 class WangYiYunSpider(scrapy.Spider):
     name = "wangyiyun"
